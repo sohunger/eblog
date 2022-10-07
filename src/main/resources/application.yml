@@ -1,10 +1,6 @@
 server:
   port: 80
 
-#      classic_compatible: true
-#        datetime_format: yyyy-MM-dd HH:mm
-#        number_format: 0.##
-#mybatis-plus:
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 spring:
