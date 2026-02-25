@@ -1,105 +1,71 @@
 package com.huang.controller;
 
+import cn.hutool.captcha.CaptchaUtil;
+import cn.hutool.captcha.LineCaptcha;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.crypto.SecureUtil;
-import com.google.code.kaptcha.Producer;
+import com.huang.annotation.RequireCaptcha;
+import com.huang.bo.LoginInfoBO;
+import com.huang.bo.RegisterInfoBO;
+import com.huang.common.RequestContext;
 import com.huang.common.lang.Result;
-import com.huang.entity.MUser;
-import com.huang.util.ValidationUtil;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.huang.util.RedisKeyUtil;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import javax.imageio.ImageIO;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.security.Security;
+import java.time.Duration;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Controller
+@Tag(name = "认证管理", description = "认证管理")
+@Slf4j
 public class AuthorController extends BaseController {
     public static final String KAPTCHA_SESSION_KEY = "KAPTCHA_SESSION_KEY";
-    @Autowired
-    Producer producer;
 
+    private final StringRedisTemplate stringRedisTemplate;
+
+    public AuthorController(StringRedisTemplate stringRedisTemplate) {
+        super();
+        this.stringRedisTemplate = stringRedisTemplate;
+    }
+
+
+    @Operation(summary = "获取验证码", description = "获取验证码图片")
     @GetMapping("/kaptcha.jpg")
-    public void kaptcha(HttpServletResponse resp) throws IOException {
+    public void kaptcha(HttpServletResponse resp, String uuid) throws IOException {
+        // 获取验证码图形内容
+        LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 100, 4, 5);
 
-        ServletOutputStream outputStream = resp.getOutputStream();
-
-        String text = producer.createText();
-        req.getSession().setAttribute("KAPTCHA_SESSION_KEY", text);
-        BufferedImage image = producer.createImage(text);
-        resp.setContentType("image/jpeg");
-        resp.setHeader("Cache-Control", "no-store, no-cache");
-
-        ImageIO.write(image, "jpg", outputStream);
+        // 获取图形验证码的数字内容
+        String code = lineCaptcha.getCode();
+        log.info("uuid {} 生成验证内容：[{}]", uuid, code);
+        // 缓存验证码内容，缓存时间两分钟
+        stringRedisTemplate.opsForValue().set(RedisKeyUtil.getCaptchaKey(uuid), code, Duration.ofMinutes(2));
+        // 返回验证码内容
+        lineCaptcha.write(resp.getOutputStream());
     }
+    
+//    @ResponseBody
+//    @PostMapping("/login")
+//    @Operation(summary = "用户登录", description = "用户登录验证")
+//    public Result backLogin(@RequestBody @Valid LoginInfoBO loginInfoBO, RequestContext requestContext) {
+//
+//        return Result.success();
+//    }
 
-    @GetMapping("/login")
-    public String login() {
-        return "author/login";
-    }
-
-    @ResponseBody
-    @PostMapping("/login")
-    public Result backLogin(String email, String password, String vercode) {
-        if (StrUtil.isEmpty(email) || StrUtil.isBlank(password)) {
-            return Result.fail("邮箱或密码不能为空");
-        }
-        UsernamePasswordToken token = new UsernamePasswordToken(email, SecureUtil.md5(password));
-        try {
-            SecurityUtils.getSubject().login(token);
-
-        } catch (AuthenticationException e) {
-            if (e instanceof UnknownAccountException) {
-                return Result.fail("用户不存在");
-            } else if (e instanceof LockedAccountException) {
-                return Result.fail("用户被禁用");
-            } else if (e instanceof IncorrectCredentialsException) {
-                return Result.fail("密码错误");
-            } else {
-                return Result.fail("用户认证失败");
-            }
-        }
-        return Result.success().action("/");
-    }
-
+    
     @ResponseBody
     @PostMapping("/register")
-    public Result BackRegister(MUser user, String repass, String vercode) {
-        String key = (String) req.getSession().getAttribute("KAPTCHA_SESSION_KEY");
-        ValidationUtil.ValidResult validResult = ValidationUtil.validateBean(user);
+    @Operation(summary = "用户注册", description = "新用户注册")
+    @RequireCaptcha
+    public Result BackRegister(@RequestBody @Valid RegisterInfoBO registerInfoBO, RequestContext requestContext) {
 
-        if (validResult.hasErrors()) {
-            return Result.fail(validResult.getErrors());
-        }
-        if (!repass.equals(user.getPassword())) {
-            return Result.fail("你的第二次密码输入错误!");
-        }
-        if (vercode == null || !vercode.equals(key)) {
-            return Result.fail("验证码错误，请重试!");
-        }
-
-        Result result = userService.registerUser(user);
-        return result.action("/login");
-    }
-
-    @GetMapping("/register")
-    public String register() {
-        return "author/reg";
-    }
-
-    @RequestMapping("/user/logout")
-    public String logout() {
-
-        SecurityUtils.getSubject().logout();
-        return "redirect:/";
+        return userService.registerUser(registerInfoBO);
     }
 }

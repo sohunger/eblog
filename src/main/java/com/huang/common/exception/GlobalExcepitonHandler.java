@@ -2,13 +2,12 @@ package com.huang.common.exception;
 
 import cn.hutool.json.JSONUtil;
 import com.huang.common.lang.Result;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -29,9 +28,7 @@ public class GlobalExcepitonHandler {
             return null;
         }
 
-        if (e instanceof NullPointerException) {
-            // ...
-        }
+        log.error("[全局异常处理]", e);
 
         // web处理
         ModelAndView modelAndView = new ModelAndView("error");

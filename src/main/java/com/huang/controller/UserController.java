@@ -10,11 +10,7 @@ import com.huang.entity.MPost;
 import com.huang.entity.MUser;
 import com.huang.entity.MUserMessage;
 import com.huang.shiro.AccountResult;
-import com.huang.util.QiniuCloudUtil;
 import com.huang.vo.UserMessageVo;
-import org.apache.shiro.SecurityUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,17 +19,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Controller
+@Tag(name = "用户", description = "用户相关接口")
 public class UserController extends BaseController {
 
 
+    
+    @Operation(summary = "用户主页", description = "显示用户主页信息")
     @GetMapping("/user/home")
     public String home() {
 
@@ -48,6 +47,8 @@ public class UserController extends BaseController {
         return "/user/home";
     }
 
+    
+    @Operation(summary = "用户设置页面", description = "显示用户设置页面")
     @GetMapping("/user/set")
     public String set() {
         MUser user = userService.getById(getResultId());
@@ -57,8 +58,10 @@ public class UserController extends BaseController {
         return "/user/set";
     }
 
+    
     @ResponseBody
     @PostMapping("/user/set")
+    @Operation(summary = "更新用户设置", description = "保存用户设置信息")
     public Result doSet(MUser user) {
 
         System.out.println(user.getAvatar());
@@ -71,14 +74,14 @@ public class UserController extends BaseController {
             AccountResult result = getResult();
             result.setAvatar(user.getAvatar());
 
-            SecurityUtils.getSubject().getSession().setAttribute("result", result);
+//            SecurityUtils.getSubject().getSession().setAttribute("result", result);
 
             return Result.success().action("/user/set#avatar");
         }
         if (StrUtil.isBlank(user.getUsername())) {
             Result.fail("昵称不能为空");
         }
-        int count = userService.count(new QueryWrapper<MUser>()
+        long count = userService.count(new QueryWrapper<MUser>()
                 .eq("username", user.getUsername())
                 .ne("id", getResultId())
         );
@@ -97,13 +100,15 @@ public class UserController extends BaseController {
         result.setUsername(user.getUsername());
         result.setSign(user.getSign());
         result.setGender(user.getGender());
-        SecurityUtils.getSubject().getSession().setAttribute("result", result);
+//        SecurityUtils.getSubject().getSession().setAttribute("result", result);
 
         return Result.success().action("/user/set#info");
     }
 
+    
     @ResponseBody
     @PostMapping(value = "/user/upload")
+    @Operation(summary = "上传头像", description = "上传用户头像")
     public Result uploadImg(@RequestParam(value = "file") MultipartFile file) throws Exception {
         if (file.isEmpty()) {
             return Result.fail("文件为空，请重新上传");
@@ -116,8 +121,10 @@ public class UserController extends BaseController {
 
     }
 
+    
     @ResponseBody
     @PostMapping("/user/repass")
+    @Operation(summary = "更新密码", description = "更新用户密码")
     public Result updatePass(String nowpass, String pass, String repass) {
         MUser user = userService.getById(getResultId());
 
@@ -139,6 +146,8 @@ public class UserController extends BaseController {
 
     }
 
+    
+    @Operation(summary = "用户消息", description = "显示用户消息列表")
     @GetMapping("/user/message")
     public String message() {
         IPage<UserMessageVo> page = userMessageService.paging(gtePage(), new QueryWrapper<MUserMessage>()
@@ -160,19 +169,23 @@ public class UserController extends BaseController {
         return "user/message";
     }
 
+    
     @PostMapping("message/nums/")
     @ResponseBody
+    @Operation(summary = "消息数量", description = "获取未读消息数量")
     public Map messageNums() {
-        int count = userMessageService.count(new QueryWrapper<MUserMessage>()
+        long count = userMessageService.count(new QueryWrapper<MUserMessage>()
                 .eq("to_user_id", getResultId())
                 .eq("status", "0")
         );
         return MapUtil.builder("status", 0)
-                .put("count", count).build();
+                .put("count", (int) count).build();
     }
 
+    
     @PostMapping("message/remove")
     @ResponseBody
+    @Operation(summary = "删除消息", description = "删除指定消息")
     public Result messageRemove(Long id,
                                 @RequestParam(defaultValue = "false") Boolean all) {
 
@@ -186,14 +199,18 @@ public class UserController extends BaseController {
 
     }
 
+    
+    @Operation(summary = "用户中心", description = "用户中心页面")
     @GetMapping("user/index")
     public String index() {
         return "user/index";
     }
 
 
+    
     @ResponseBody
     @GetMapping("user/public")
+    @Operation(summary = "用户发布的帖子", description = "获取用户发布的帖子列表")
     public Result userP() {
         IPage page = postService.page(gtePage(), new QueryWrapper<MPost>()
                 .eq("user_id", getResultId())
@@ -202,8 +219,10 @@ public class UserController extends BaseController {
         return Result.success(page);
     }
 
+    
     @ResponseBody
     @GetMapping("user/collection")
+    @Operation(summary = "用户收藏的帖子", description = "获取用户收藏的帖子列表")
     public Result collection() {
         IPage page = postService.page(gtePage(), new QueryWrapper<MPost>()
                 .inSql("id", "SELECT post_id FROM m_user_collection WHERE user_id=" + getResultId())

@@ -1,9 +1,9 @@
 package com.huang.service;
 
+import com.huang.bo.RegisterInfoBO;
 import com.huang.common.lang.Result;
 import com.huang.entity.MUser;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.huang.shiro.AccountResult;
 
 /**
  * <p>
@@ -15,7 +15,7 @@ import com.huang.shiro.AccountResult;
  */
 public interface MUserService extends IService<MUser> {
 
-    Result registerUser(MUser user);
+    Result registerUser(RegisterInfoBO registerInfoBO);
 
-    AccountResult loginUser(String username, String password);
+//    AccountResult loginUser(String username, String password);
 }

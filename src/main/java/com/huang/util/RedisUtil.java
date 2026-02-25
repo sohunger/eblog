@@ -616,4 +616,8 @@ public class RedisUtil {
         return redisTemplate.opsForZSet().reverseRangeWithScores(key, start, end);
     }
 
+    public void getAndRemove(String key) {
+        String result = (String) redisTemplate.opsForValue().getAndDelete(key);
+    }
+
 }

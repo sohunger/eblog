@@ -5,11 +5,11 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class Result implements Serializable {
+public class Result<T> implements Serializable {
     //0成功  1失败
     private int status;
     private String msg;
-    private Object data;
+    private T data;
     private String action;
 
     public static Result success(String msg, Object data) {

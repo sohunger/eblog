@@ -18,8 +18,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @Controller
+@Tag(name = "帖子", description = "帖子相关接口")
 public class PostController extends BaseController {
+    
+    @Operation(summary = "帖子详情", description = "查看帖子详细信息")
     @GetMapping("post/{id:\\d*}")
     public String detail(@PathVariable(name = "id") Long id) {
         PostVo vo = postService.selectOnePost(new QueryWrapper<MPost>().eq("p.id", id));
@@ -36,6 +42,8 @@ public class PostController extends BaseController {
         return "post/detail";
     }
 
+    
+    @Operation(summary = "分类页面", description = "查看分类下的帖子")
     @GetMapping("category/{id:\\d*}")
     public String category(@PathVariable(name = "id") Long id) {
         int pn = ServletRequestUtils.getIntParameter(req, "pn", 1);
@@ -46,10 +54,12 @@ public class PostController extends BaseController {
         return "post/category";
     }
 
+    
     @ResponseBody
     @PostMapping("collection/find")
+    @Operation(summary = "查找收藏状态", description = "查询帖子是否被收藏")
     public Result collectionFind(Long pid) {
-        int count = userCollectionService.count(new QueryWrapper<MUserCollection>()
+        long count = userCollectionService.count(new QueryWrapper<MUserCollection>()
                 .eq("user_id", getResultId())
                 .eq("post_id", pid)
         );
@@ -57,14 +67,16 @@ public class PostController extends BaseController {
         return Result.success(MapUtil.of("collection", count > 0));
     }
 
+    
     @ResponseBody
     @PostMapping("collection/add/")
+    @Operation(summary = "添加收藏", description = "收藏帖子")
     public Result collectionAdd(Long pid) {
 
         MPost post = postService.getById(pid);
 
         Assert.isTrue(post != null, "改帖子已被删除");
-        int count = userCollectionService.count(new QueryWrapper<MUserCollection>()
+        long count = userCollectionService.count(new QueryWrapper<MUserCollection>()
                 .eq("user_id", getResultId())
                 .eq("post_id", pid)
         );
@@ -83,8 +95,10 @@ public class PostController extends BaseController {
     }
 
 
+    
     @ResponseBody
     @PostMapping("collection/remove/")
+    @Operation(summary = "取消收藏", description = "取消帖子收藏")
     public Result collectionRemove(Long pid) {
 
         userCollectionService.remove(new QueryWrapper<MUserCollection>()
@@ -95,6 +109,8 @@ public class PostController extends BaseController {
         return Result.success();
     }
 
+    
+    @Operation(summary = "编辑帖子页面", description = "进入帖子编辑页面")
     @GetMapping("/post/edit")
     public String edit() {
         String id = req.getParameter("id");
@@ -110,8 +126,10 @@ public class PostController extends BaseController {
         return "post/edit";
     }
 
+    
     @PostMapping("/post/submit")
     @ResponseBody
+    @Operation(summary = "提交帖子", description = "发布或更新帖子")
     public Result submit(MPost post) {
         ValidationUtil.ValidResult validResult = ValidationUtil.validateBean(post);
         if (validResult.hasErrors()) {
@@ -144,8 +162,10 @@ public class PostController extends BaseController {
         return Result.success().action("/post/" + post.getId());
     }
 
+    
     @PostMapping("/post/delete")
     @ResponseBody
+    @Operation(summary = "删除帖子", description = "删除指定帖子")
     public Result delete(Long id) {
         MPost post = postService.getById(id);
 
@@ -159,8 +179,10 @@ public class PostController extends BaseController {
         return Result.success("删除成功");
     }
 
+    
     @PostMapping("/post/reply")
     @ResponseBody
+    @Operation(summary = "回复帖子", description = "对帖子进行评论")
     public Result reply(String content, Long pid) {
         Assert.hasLength(content, "评论内容不能为空");
         Assert.notNull(pid, "找不到要评论的帖子");

@@ -3,16 +3,17 @@ package com.huang.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.huang.entity.MUserMessage;
 import com.huang.service.*;
-import com.huang.shiro.AccountRealm;
 import com.huang.shiro.AccountResult;
 import com.huang.util.MultipartFileToFileUtil;
 import com.huang.util.QiniuCloudUtil;
-import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.ServletRequestUtils;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "基础控制器", description = "控制器基类")
 public class BaseController {
     @Autowired
     HttpServletRequest req;
@@ -43,7 +44,8 @@ public class BaseController {
     }
 
     protected AccountResult getResult() {
-        return (AccountResult) SecurityUtils.getSubject().getPrincipal();
+//        return (AccountResult) SecurityUtils.getSubject().getPrincipal();
+        return new AccountResult();
     }
 
     protected Long getResultId() {

@@ -13,10 +13,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.huang.util.RedisUtil;
 import com.huang.vo.PostVo;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +30,7 @@ import java.util.List;
  * @since 2022-03-18
  */
 @Service
+@Slf4j
 public class MPostServiceImpl extends ServiceImpl<MPostMapper, MPost> implements MPostService {
 
     @Autowired
@@ -68,7 +69,8 @@ public class MPostServiceImpl extends ServiceImpl<MPostMapper, MPost> implements
                 .ge("created", DateUtil.offsetDay(new Date(), -7))
                 .select("id,title,user_id,comment_count,view_count,created")
         );
-        System.out.println("初始化成功....................................................");
+        log.info("初始化成功....................................................");
+        log.error("初始化成功....................................................");
         //初始化文章的总评论数
         for (MPost post : posts) {
             String key = "day:rank" + DateUtil.format(post.getCreated(), DatePattern.PURE_DATE_FORMAT);

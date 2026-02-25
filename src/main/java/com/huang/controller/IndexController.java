@@ -7,9 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @Controller
+@Tag(name = "首页", description = "首页相关接口")
 public class IndexController extends BaseController {
 
+    
+    @Operation(summary = "首页", description = "显示网站首页")
     @RequestMapping({"", "/", "index"})
     public String index() {
 

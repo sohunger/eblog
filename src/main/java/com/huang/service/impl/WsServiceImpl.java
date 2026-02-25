@@ -19,7 +19,7 @@ public class WsServiceImpl implements WsService {
     @Async
     @Override
     public void notifyMsgToUser(Long toUserId) {
-        int count = userMessageService.count(new QueryWrapper<MUserMessage>()
+        long count = userMessageService.count(new QueryWrapper<MUserMessage>()
                 .eq("to_user_id", toUserId)
                 .eq("status", "0")
         );

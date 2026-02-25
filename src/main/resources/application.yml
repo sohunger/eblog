@@ -5,20 +5,50 @@ mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 spring:
   datasource:
-    url: jdbc:p6spy:mysql://39.108.248.78:3306/eblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://192.168.189.100:3306/eblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
-    password: root
-    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
-    #driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+#    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   freemarker:
     settings:
       classic_compatible: true
       datetime_format: yyyy-MM-dd HH:mm
       number_format: 0.##
-  redis:
-    database: 0
-    host: 39.108.248.78
-    port: 6379
+
+  data:
+    redis:
+      host: 192.168.189.100
+      port: 6379
+      password: 123456!
+    #    database: 0
+
+# 修改redis日志打印为debug级别
+#logging:
+#  level:
+#    io.lettuce.core: debug
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    mappings:
+      enabled: true
+    beans:
+      enabled: true
+
+jwt:
+  # 密钥（至少32位，建议使用Base64编码的字符串）
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  # token 有效期（毫秒） 24小时 = 86400000
+  expiration: 86400000
 
 
 

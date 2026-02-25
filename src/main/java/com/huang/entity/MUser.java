@@ -5,13 +5,12 @@ import com.huang.entity.BaseEntity;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 /**
  * <p>
@@ -103,5 +102,9 @@ public class MUser extends BaseEntity {
      */
     private Date lasted;
 
+    /**
+     * 用户权限
+     */
+    private String role;
 
 }
