@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  配置文件说明：
+  1. monitorInterval="30" - 每30秒自动检查配置文件变化，支持热更新
+  2. status="WARN" - 只显示Log4j2自身的WARN及以上级别日志
+-->
+<Configuration status="DEBUG" monitorInterval="30">
+    <!-- 定义变量，便于统一修改 -->
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %c{1.} - %msg%n</Property>
+        <Property name="LOG_PATH">logs</Property>
+        <Property name="APP_NAME">myapp</Property>
+    </Properties>
+
+    <!-- 输出目标定义 -->
+    <Appenders>
+        <!-- 1. 控制台输出（开发环境使用） -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- 彩色日志（IDEA/Eclipse支持） -->
+            <PatternLayout pattern="%style{%d{yyyy-MM-dd HH:mm:ss.SSS}}{cyan} [%t][%X{traceId}] %highlight{%-5level} %style{%c{1.}}{green} - %msg%n"/>
+        </Console>
+
+        <!-- 2. 按天滚动的应用日志 -->
+        <RollingFile name="AppFile"
+                     fileName="${LOG_PATH}/${APP_NAME}.log"
+                     filePattern="${LOG_PATH}/${APP_NAME}-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <!-- 每天凌晨滚动 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!-- 文件超过10MB也滚动 -->
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <!-- 保留最近30天的日志 -->
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- 3. 错误日志单独输出（ERROR级别以上） -->
+        <RollingFile name="ErrorFile"
+                     fileName="${LOG_PATH}/${APP_NAME}-error.log"
+                     filePattern="${LOG_PATH}/${APP_NAME}-error-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+    </Appenders>
+
+    <!-- 日志级别配置 -->
+    <Loggers>
+        <!-- 1. 应用自身包 - 可根据需要调整级别 -->
+        <Logger name="com.huang.controller" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console"/>
+<!--            <AppenderRef ref="AppFile"/>-->
+<!--            <AppenderRef ref="ErrorFile"/>-->
+        </Logger>
+
+        <!-- 2. Spring框架日志（避免过多INFO日志） -->
+        <Logger name="org.springframework" level="WARN" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <!-- Spring Web请求日志 -->
+        <Logger name="org.springframework.web" level="INFO" additivity="false">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <!-- 3. 数据库相关日志 -->
+        <!-- SQL语句（开发时可设为DEBUG） -->
+        <Logger name="org.hibernate.SQL" level="WARN" additivity="false">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <!-- SQL参数（开发时可设为TRACE） -->
+        <Logger name="org.hibernate.type.descriptor.sql" level="WARN" additivity="false">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <!-- MyBatis -->
+        <Logger name="org.mybatis" level="WARN" additivity="false">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <!-- 4. 连接池（HikariCP） -->
+        <Logger name="com.zaxxer.hikari" level="INFO" additivity="false">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <!-- 5. 第三方库（避免WARN/ERROR日志干扰） -->
+        <Logger name="freemarker" level="WARN" additivity="false">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <Logger name="org.apache" level="WARN" additivity="false">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <!-- 6. 根日志配置 -->
+        <Root level="INFO">
+            <!-- 开发环境：只输出到控制台 -->
+            <AppenderRef ref="Console"/>
+            <!-- 生产环境：取消注释，改为输出到文件 -->
+            <!--
+            <AppenderRef ref="AppFile"/>
+            <AppenderRef ref="ErrorFile"/>
+            -->
+        </Root>
+    </Loggers>
+</Configuration>

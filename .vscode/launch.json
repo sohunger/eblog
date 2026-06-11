@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EblogApplication<eblog>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.huang.EblogApplication",
+            "projectName": "eblog",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

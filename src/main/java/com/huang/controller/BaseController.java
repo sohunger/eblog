@@ -1,12 +1,16 @@
 package com.huang.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.huang.entity.MUser;
 import com.huang.entity.MUserMessage;
 import com.huang.service.*;
-import com.huang.shiro.AccountResult;
 import com.huang.util.MultipartFileToFileUtil;
 import com.huang.util.QiniuCloudUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.ServletRequestUtils;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -37,18 +41,25 @@ public class BaseController {
     WsService wsService;
 
 
-    public Page gtePage() {
+    public Page getPage() {
         int pn = ServletRequestUtils.getIntParameter(req, "pn", 1);
-        int size = ServletRequestUtils.getIntParameter(req, "size", 2);
+        int size = ServletRequestUtils.getIntParameter(req, "size", 10);
         return new Page(pn, size);
     }
 
-    protected AccountResult getResult() {
-//        return (AccountResult) SecurityUtils.getSubject().getPrincipal();
-        return new AccountResult();
+    protected MUser getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return null;
+        }
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        return userService.getOne(new QueryWrapper<MUser>()
+                .eq("username", userDetails.getUsername())
+                .or(wrapper -> wrapper.eq("email", userDetails.getUsername())));
     }
 
     protected Long getResultId() {
-        return getResult().getId();
+        MUser user = getCurrentUser();
+        return user != null ? user.getId() : null;
     }
 }

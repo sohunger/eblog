@@ -81,24 +81,4 @@ public class MUserServiceImpl extends ServiceImpl<MUserMapper, MUser> implements
 
     }
 
-//    @Override
-//    public AccountResult loginUser(String email, String password) {
-//        MUser user = this.getOne(new QueryWrapper<MUser>().eq("email", email));
-//        if (user == null) {
-////            throw new UnknownAccountException();
-//        }
-//
-//        if (!user.getPassword().equals(password)) {
-////            throw new IncorrectCredentialsException();
-//        }
-//
-//        user.setLasted(new Date());
-//        this.updateById(user);
-//
-//        AccountResult result = new AccountResult();
-//        BeanUtil.copyProperties(user, result);
-//
-//        return result;
-//    }
-
 }

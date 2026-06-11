@@ -9,7 +9,6 @@ import com.huang.common.lang.Result;
 import com.huang.entity.MPost;
 import com.huang.entity.MUser;
 import com.huang.entity.MUserMessage;
-import com.huang.shiro.AccountResult;
 import com.huang.vo.UserMessageVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -71,11 +70,6 @@ public class UserController extends BaseController {
             temp.setAvatar(user.getAvatar());
             userService.updateById(temp);
 
-            AccountResult result = getResult();
-            result.setAvatar(user.getAvatar());
-
-//            SecurityUtils.getSubject().getSession().setAttribute("result", result);
-
             return Result.success().action("/user/set#avatar");
         }
         if (StrUtil.isBlank(user.getUsername())) {
@@ -95,12 +89,6 @@ public class UserController extends BaseController {
         temp.setGender(user.getGender());
         temp.setSign(user.getSign());
         userService.updateById(temp);
-
-        AccountResult result = getResult();
-        result.setUsername(user.getUsername());
-        result.setSign(user.getSign());
-        result.setGender(user.getGender());
-//        SecurityUtils.getSubject().getSession().setAttribute("result", result);
 
         return Result.success().action("/user/set#info");
     }
@@ -150,7 +138,7 @@ public class UserController extends BaseController {
     @Operation(summary = "用户消息", description = "显示用户消息列表")
     @GetMapping("/user/message")
     public String message() {
-        IPage<UserMessageVo> page = userMessageService.paging(gtePage(), new QueryWrapper<MUserMessage>()
+        IPage<UserMessageVo> page = userMessageService.paging(getPage(), new QueryWrapper<MUserMessage>()
                 .eq("to_user_id", getResultId())
                 .orderByDesc("created")
         );
@@ -212,7 +200,7 @@ public class UserController extends BaseController {
     @GetMapping("user/public")
     @Operation(summary = "用户发布的帖子", description = "获取用户发布的帖子列表")
     public Result userP() {
-        IPage page = postService.page(gtePage(), new QueryWrapper<MPost>()
+        IPage page = postService.page(getPage(), new QueryWrapper<MPost>()
                 .eq("user_id", getResultId())
                 .orderByDesc("created")
         );
@@ -224,7 +212,7 @@ public class UserController extends BaseController {
     @GetMapping("user/collection")
     @Operation(summary = "用户收藏的帖子", description = "获取用户收藏的帖子列表")
     public Result collection() {
-        IPage page = postService.page(gtePage(), new QueryWrapper<MPost>()
+        IPage page = postService.page(getPage(), new QueryWrapper<MPost>()
                 .inSql("id", "SELECT post_id FROM m_user_collection WHERE user_id=" + getResultId())
         );
         return Result.success(page);

@@ -2,7 +2,9 @@ package com.huang.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huang.common.lang.Result;
+import com.huang.entity.MUser;
 import com.huang.jwt.JwtTokenProvider;
+import com.huang.service.MUserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -29,6 +31,8 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
     private final JwtTokenProvider jwtTokenProvider;
 
+    private final MUserService userService;
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
             Authentication authentication) throws IOException, ServletException {
@@ -42,9 +46,17 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         // 生成 JWT
         String token = jwtTokenProvider.generateToken(userDetails);
 
+        // 查询用户信息获取头像
+        MUser user = userService.getOne(new com.baomidou.mybatisplus.core.conditions.query.QueryWrapper<MUser>()
+                .eq("username", userDetails.getUsername()));
+
         // 构建返回的 JSON 数据
         Map<String, Object> resultMap = new HashMap<>();
         resultMap.put("token", token);
+        resultMap.put("userName", userDetails.getUsername());
+        if (user != null) {
+            resultMap.put("avatar", user.getAvatar());
+        }
 
         // 设置响应内容类型为JSON
         response.setContentType("application/json;charset=UTF-8");

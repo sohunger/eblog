@@ -1,0 +1,20 @@
+2026-02-24 11:25:29.310 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name dbUserDetailsService
+2026-02-24 11:25:29.411 [main] DEBUG o.s.s.w.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CustomAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-02-24 11:25:29.828 [main] INFO  o.s.w.SimpLogging - Starting...
+2026-02-24 11:25:29.829 [main] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4cb939d5]]
+2026-02-24 11:25:29.830 [main] INFO  o.s.w.SimpLogging - Started.
+2026-02-24 11:25:29.935 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2026-02-24 11:25:30.090 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3678f32e
+2026-02-24 11:25:30.095 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-24 11:25:30.903 [RMI TCP Connection(2)-10.37.106.23] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-24 11:25:30.904 [RMI TCP Connection(2)-10.37.106.23] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+2026-02-24 11:25:46.678 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=123456789
+2026-02-24 11:25:46.707 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=123456789
+2026-02-24 11:25:58.552 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing POST /login
+2026-02-24 11:25:58.777 [http-nio-80-exec-2] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-02-24 11:26:29.810 [MessageBroker-4] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 14, active threads = 1, queued tasks = 1, completed tasks = 12]
+2026-02-24 11:29:06.089 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopping...
+2026-02-24 11:29:06.089 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4cb939d5]]
+2026-02-24 11:29:06.089 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopped.
+2026-02-24 11:29:06.107 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-24 11:29:06.109 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.

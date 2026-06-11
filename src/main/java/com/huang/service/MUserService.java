@@ -16,6 +16,4 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface MUserService extends IService<MUser> {
 
     Result registerUser(RegisterInfoBO registerInfoBO);
-
-//    AccountResult loginUser(String username, String password);
 }

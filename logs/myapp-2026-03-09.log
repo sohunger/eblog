@@ -1,0 +1,337 @@
+2026-03-09 09:10:47.432 [http-nio-80-exec-2] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [null] and exception [ServletOutputStream failed to flush: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。] as the response has already been committed. As a result, the response may have the wrong status code.
+2026-03-09 09:10:52.422 [HikariPool-1:housekeeper] WARN  c.z.h.p.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2d12h22m2s457ms763µs100ns).
+2026-03-09 09:13:18.854 [MessageBroker-10] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 2, queued tasks = 0, completed tasks = 6605]
+2026-03-09 09:43:18.858 [MessageBroker-7] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 6966]
+2026-03-09 10:13:18.872 [MessageBroker-8] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 7327]
+2026-03-09 10:32:09.506 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 10:32:09.512 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 10:32:10.102 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing POST /collection/find
+2026-03-09 10:32:10.105 [http-nio-80-exec-1] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 10:32:10.107 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing POST /error
+2026-03-09 10:32:10.108 [http-nio-80-exec-1] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 10:32:10.111 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=56c9b8e5-d3f4-4eb5-b2e5-e90c728fce1d
+2026-03-09 10:32:10.111 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=56c9b8e5-d3f4-4eb5-b2e5-e90c728fce1d
+2026-03-09 10:42:32.761 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=1c9f6152-e7b7-43f8-97fd-5dc1db74ca8b
+2026-03-09 10:42:32.762 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=1c9f6152-e7b7-43f8-97fd-5dc1db74ca8b
+2026-03-09 10:42:36.306 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 10:42:36.309 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 10:42:38.334 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=d559cf9f-adfb-4497-bedd-f0d5ea812c1c
+2026-03-09 10:42:38.334 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=d559cf9f-adfb-4497-bedd-f0d5ea812c1c
+2026-03-09 10:42:39.155 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 10:42:39.155 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 10:42:40.073 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=f34169b8-85f7-4998-ab04-6b68717b6543
+2026-03-09 10:42:40.074 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=f34169b8-85f7-4998-ab04-6b68717b6543
+2026-03-09 10:42:40.754 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 10:42:40.754 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 10:42:41.690 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=b231ae6e-226e-4591-b681-cea2dac3fe36
+2026-03-09 10:42:41.691 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=b231ae6e-226e-4591-b681-cea2dac3fe36
+2026-03-09 10:43:18.885 [MessageBroker-12] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 7688]
+2026-03-09 10:52:22.250 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=db00aa61-8dd0-46da-b6de-b20c45dd9e75
+2026-03-09 10:52:22.251 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=db00aa61-8dd0-46da-b6de-b20c45dd9e75
+2026-03-09 10:52:22.794 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=168c01e3-8fcb-42fd-8bdf-ac54f7ad4b43
+2026-03-09 10:52:22.795 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=168c01e3-8fcb-42fd-8bdf-ac54f7ad4b43
+2026-03-09 10:52:23.293 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 10:52:23.294 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 11:13:18.901 [MessageBroker-3] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 8049]
+2026-03-09 11:19:20.094 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /user/home
+2026-03-09 11:19:20.095 [http-nio-80-exec-7] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:19:20.099 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error
+2026-03-09 11:19:20.100 [http-nio-80-exec-7] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:19:40.002 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index
+2026-03-09 11:19:40.002 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index
+2026-03-09 11:19:56.041 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /category?id=3
+2026-03-09 11:19:56.042 [http-nio-80-exec-9] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:19:56.042 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error?id=3
+2026-03-09 11:19:56.043 [http-nio-80-exec-9] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:21:34.943 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopping...
+2026-03-09 11:21:34.943 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@69fa5536]]
+2026-03-09 11:21:34.943 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopped.
+2026-03-09 11:21:34.979 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-09 11:21:34.982 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-09 11:21:43.546 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name dbUserDetailsService
+2026-03-09 11:21:43.688 [main] DEBUG o.s.s.w.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, CustomAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-03-09 11:21:44.287 [main] INFO  o.s.w.SimpLogging - Starting...
+2026-03-09 11:21:44.287 [main] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3a641f6]]
+2026-03-09 11:21:44.288 [main] INFO  o.s.w.SimpLogging - Started.
+2026-03-09 11:21:44.423 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2026-03-09 11:21:44.557 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@372c428
+2026-03-09 11:21:44.568 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-09 11:21:45.590 [RMI TCP Connection(2)-192.168.69.23] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-09 11:21:45.593 [RMI TCP Connection(2)-192.168.69.23] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+2026-03-09 11:21:52.018 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /category?id=3
+2026-03-09 11:21:52.043 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /category?id=3
+2026-03-09 11:22:03.325 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /category?id=1
+2026-03-09 11:22:03.328 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /category?id=1
+2026-03-09 11:22:44.263 [MessageBroker-2] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 14, active threads = 1, queued tasks = 1, completed tasks = 12]
+2026-03-09 11:27:41.856 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /category/list
+2026-03-09 11:27:41.874 [http-nio-80-exec-7] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:27:41.885 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error
+2026-03-09 11:27:41.886 [http-nio-80-exec-7] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:28:53.481 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 11:28:53.481 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /category/list
+2026-03-09 11:28:53.482 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 11:28:53.483 [http-nio-80-exec-8] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:28:53.485 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error
+2026-03-09 11:28:53.486 [http-nio-80-exec-8] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:46:15.721 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /user/public?page=1&size=10
+2026-03-09 11:46:15.722 [http-nio-80-exec-1] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:46:15.725 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error?page=1&size=10
+2026-03-09 11:46:15.727 [http-nio-80-exec-1] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:46:20.449 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 11:46:20.452 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 11:46:22.473 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /user/public?page=1&size=10
+2026-03-09 11:46:22.475 [http-nio-80-exec-3] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:46:22.478 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error?page=1&size=10
+2026-03-09 11:46:22.478 [http-nio-80-exec-3] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 11:46:26.481 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 11:46:26.484 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 11:52:44.275 [MessageBroker-3] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 373]
+2026-03-09 12:22:44.277 [MessageBroker-18] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 734]
+2026-03-09 13:35:08.259 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 13:35:08.261 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 13:35:11.590 [MessageBroker-8] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 2, queued tasks = 0, completed tasks = 1007]
+2026-03-09 13:35:32.522 [HikariPool-1:housekeeper] WARN  c.z.h.p.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m16s588ms934µs500ns).
+2026-03-09 14:05:11.598 [MessageBroker-13] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 1369]
+2026-03-09 14:35:11.607 [MessageBroker-14] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 1730]
+2026-03-09 15:05:11.617 [MessageBroker-20] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 2091]
+2026-03-09 15:26:23.095 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopping...
+2026-03-09 15:26:23.095 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3a641f6]]
+2026-03-09 15:26:23.095 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopped.
+2026-03-09 15:26:23.148 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-09 15:26:23.151 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-09 15:26:28.598 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name dbUserDetailsService
+2026-03-09 15:26:28.685 [main] DEBUG o.s.s.w.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, CustomAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-03-09 15:26:29.112 [main] INFO  o.s.w.SimpLogging - Starting...
+2026-03-09 15:26:29.112 [main] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@38568876]]
+2026-03-09 15:26:29.113 [main] INFO  o.s.w.SimpLogging - Started.
+2026-03-09 15:26:29.222 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2026-03-09 15:26:29.333 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@581f1f40
+2026-03-09 15:26:29.342 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-09 15:26:30.262 [RMI TCP Connection(3)-192.168.69.23] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-09 15:26:30.265 [RMI TCP Connection(3)-192.168.69.23] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
+2026-03-09 15:26:38.452 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index
+2026-03-09 15:26:38.472 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index
+2026-03-09 15:27:29.093 [MessageBroker-4] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 14, active threads = 1, queued tasks = 1, completed tasks = 12]
+2026-03-09 15:29:54.664 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index
+2026-03-09 15:29:54.667 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index
+2026-03-09 15:30:02.851 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:30:02.872 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:30:23.106 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /category/list
+2026-03-09 15:30:23.109 [http-nio-80-exec-6] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:30:23.119 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error
+2026-03-09 15:30:23.121 [http-nio-80-exec-6] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:31:34.920 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:31:34.923 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:32:59.660 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:32:59.662 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:32:59.695 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:32:59.697 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:34:13.955 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /user/public?page=1&size=10
+2026-03-09 15:34:13.959 [http-nio-80-exec-9] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:34:13.960 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /error?page=1&size=10
+2026-03-09 15:34:13.962 [http-nio-80-exec-9] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:34:26.447 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:34:26.450 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:34:26.472 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:34:26.474 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:35:49.217 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:35:49.219 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:35:49.241 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:35:49.244 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:36:13.570 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:36:13.570 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:36:13.571 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:36:13.571 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:36:26.614 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:36:26.616 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:19.732 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:37:19.733 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:37:24.952 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:37:24.953 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:37:27.493 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=fb913f9a-9ad3-4d16-8d98-c8e3da2ff1c7
+2026-03-09 15:37:27.496 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=fb913f9a-9ad3-4d16-8d98-c8e3da2ff1c7
+2026-03-09 15:37:29.001 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:37:29.001 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:29.002 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:37:29.002 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:31.772 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:31.772 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:37:31.773 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:31.776 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:37:32.414 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:37:32.414 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:32.416 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:37:32.416 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:38.329 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=7107d293-752d-440b-8a80-582d963caff8
+2026-03-09 15:37:38.332 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=7107d293-752d-440b-8a80-582d963caff8
+2026-03-09 15:37:39.654 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:39.654 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:37:39.656 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:39.656 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:37:40.086 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:37:40.088 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:37:40.523 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:37:40.525 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:37:40.974 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=6dfd2a1b-5117-40c0-b8b7-c8dab5bceebe
+2026-03-09 15:37:40.975 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=6dfd2a1b-5117-40c0-b8b7-c8dab5bceebe
+2026-03-09 15:37:41.618 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=e4470f6a-d586-452e-ad74-65ed54eba590
+2026-03-09 15:37:41.620 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=e4470f6a-d586-452e-ad74-65ed54eba590
+2026-03-09 15:37:42.023 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=38072faa-9e1b-4c9d-9525-e3842b6e77dc
+2026-03-09 15:37:42.024 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=38072faa-9e1b-4c9d-9525-e3842b6e77dc
+2026-03-09 15:37:42.457 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing POST /collection/find
+2026-03-09 15:37:42.457 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:42.460 [http-nio-80-exec-3] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:37:42.459 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:42.461 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing POST /error
+2026-03-09 15:37:42.461 [http-nio-80-exec-3] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:37:42.463 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=9454a72b-87a5-4f82-91cd-a053429d2519
+2026-03-09 15:37:42.464 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=9454a72b-87a5-4f82-91cd-a053429d2519
+2026-03-09 15:37:42.676 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:42.676 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing POST /collection/find
+2026-03-09 15:37:42.677 [http-nio-80-exec-6] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:37:42.677 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:42.677 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing POST /error
+2026-03-09 15:37:42.679 [http-nio-80-exec-6] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:37:42.680 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=a511076f-4d8e-4c71-b455-585353895ff3
+2026-03-09 15:37:42.680 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=a511076f-4d8e-4c71-b455-585353895ff3
+2026-03-09 15:37:42.844 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing POST /collection/find
+2026-03-09 15:37:42.844 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:42.845 [http-nio-80-exec-8] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:37:42.845 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:42.847 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing POST /error
+2026-03-09 15:37:42.848 [http-nio-80-exec-8] DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint - Pre-authenticated entry point called. Rejecting access
+2026-03-09 15:37:42.851 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /kaptcha.jpg?uuid=8a4b1c3c-9727-4a62-bcd3-5ebd39d0904b
+2026-03-09 15:37:42.852 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /kaptcha.jpg?uuid=8a4b1c3c-9727-4a62-bcd3-5ebd39d0904b
+2026-03-09 15:37:43.709 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:37:43.709 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:37:43.709 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:37:43.709 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:42:32.194 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:42:32.197 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:42:36.499 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:42:36.499 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:42:36.499 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:42:36.499 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:42:47.841 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index
+2026-03-09 15:42:47.842 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index
+2026-03-09 15:44:52.795 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:44:52.795 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:44:52.796 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:44:52.796 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:46:09.177 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:46:09.179 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:46:10.535 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:46:10.536 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:46:14.859 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:46:14.861 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:46:16.754 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:46:16.755 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:46:16.755 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:46:16.756 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:46:22.061 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:46:22.061 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:46:22.061 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:46:22.061 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:46:31.557 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:46:31.557 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:46:31.558 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:46:31.558 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:46:59.231 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:46:59.231 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:46:59.231 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:46:59.231 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:47:03.305 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:47:03.305 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:47:03.306 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:47:03.306 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:47:10.502 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:47:10.502 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:47:10.504 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:47:10.504 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:47:43.040 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:47:43.040 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:47:43.041 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:47:43.041 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:52:09.441 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:52:09.441 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:52:09.441 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:52:09.441 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:53:26.682 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:53:26.683 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:55:07.922 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:55:07.923 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:55:25.152 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:55:25.152 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:55:26.758 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:55:26.759 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:55:26.759 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10
+2026-03-09 15:55:26.759 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10
+2026-03-09 15:55:32.216 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:55:32.216 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:55:39.952 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:55:39.952 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:55:39.952 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:55:39.952 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:55:40.605 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:55:40.605 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 15:55:40.605 [http-nio-80-exec-2] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 15:55:40.605 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 15:57:29.093 [MessageBroker-12] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 372]
+2026-03-09 16:11:32.710 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopping...
+2026-03-09 16:11:32.710 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@38568876]]
+2026-03-09 16:11:32.710 [SpringApplicationShutdownHook] INFO  o.s.w.SimpLogging - Stopped.
+2026-03-09 16:11:32.730 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-09 16:11:32.732 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-09 16:11:39.964 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name dbUserDetailsService
+2026-03-09 16:11:40.052 [main] DEBUG o.s.s.w.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, CustomAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-03-09 16:11:40.475 [main] INFO  o.s.w.SimpLogging - Starting...
+2026-03-09 16:11:40.476 [main] INFO  o.s.w.SimpLogging - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@779cda39]]
+2026-03-09 16:11:40.477 [main] INFO  o.s.w.SimpLogging - Started.
+2026-03-09 16:11:40.583 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2026-03-09 16:11:40.688 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54418834
+2026-03-09 16:11:40.695 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-09 16:11:41.647 [RMI TCP Connection(1)-192.168.69.23] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-09 16:11:41.650 [RMI TCP Connection(1)-192.168.69.23] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 3 ms
+2026-03-09 16:12:40.467 [MessageBroker-4] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 14, active threads = 1, queued tasks = 1, completed tasks = 12]
+2026-03-09 16:41:12.612 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 16:41:12.612 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /index?pn=1&size=10&categoryId=1
+2026-03-09 16:41:12.656 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /index?pn=1&size=10&categoryId=1
+2026-03-09 16:41:12.656 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 16:42:40.469 [MessageBroker-17] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 373]
+2026-03-09 16:50:15.275 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10
+2026-03-09 16:50:15.275 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 16:50:15.276 [http-nio-80-exec-6] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10
+2026-03-09 16:50:15.276 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 16:50:19.775 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10&categoryId=1
+2026-03-09 16:50:19.776 [http-nio-80-exec-7] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10&categoryId=1
+2026-03-09 16:50:24.551 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10
+2026-03-09 16:50:24.554 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10
+2026-03-09 16:51:09.860 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 16:51:09.860 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10
+2026-03-09 16:51:09.863 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 16:51:09.863 [http-nio-80-exec-10] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10
+2026-03-09 16:51:11.242 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10&categoryId=2
+2026-03-09 16:51:11.244 [http-nio-80-exec-3] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10&categoryId=2
+2026-03-09 16:51:18.064 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10&categoryId=1
+2026-03-09 16:51:18.066 [http-nio-80-exec-1] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10&categoryId=1
+2026-03-09 16:51:20.187 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10
+2026-03-09 16:51:20.188 [http-nio-80-exec-9] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10
+2026-03-09 16:52:48.365 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 16:52:48.366 [http-nio-80-exec-5] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 17:12:40.478 [MessageBroker-2] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 732]
+2026-03-09 17:42:40.483 [MessageBroker-19] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 1, queued tasks = 1, completed tasks = 1092]
+2026-03-09 18:51:34.961 [MessageBroker-2] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 22, active threads = 2, queued tasks = 0, completed tasks = 1304]
+2026-03-09 18:51:34.970 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@77b4109b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.971 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2b780e3e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.972 [HikariPool-1:housekeeper] WARN  c.z.h.p.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m22s244ms723µs100ns).
+2026-03-09 18:51:34.972 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1174621c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.972 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@46138861 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.973 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@64ffe198 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.973 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@f1d1ac7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.973 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3d4bedba (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.974 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@67412af2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:34.974 [HikariPool-1:housekeeper] WARN  c.z.h.p.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7c29e4a3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-09 18:51:36.217 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Securing GET /
+2026-03-09 18:51:36.217 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Securing GET /?pn=1&size=10
+2026-03-09 18:51:36.219 [http-nio-80-exec-8] DEBUG o.s.s.w.FilterChainProxy - Secured GET /
+2026-03-09 18:51:36.219 [http-nio-80-exec-4] DEBUG o.s.s.w.FilterChainProxy - Secured GET /?pn=1&size=10

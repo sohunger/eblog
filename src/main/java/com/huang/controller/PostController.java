@@ -17,6 +17,7 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.Map;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -25,33 +26,35 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name = "帖子", description = "帖子相关接口")
 public class PostController extends BaseController {
     
+    @ResponseBody
     @Operation(summary = "帖子详情", description = "查看帖子详细信息")
-    @GetMapping("post/{id:\\d*}")
-    public String detail(@PathVariable(name = "id") Long id) {
+    @GetMapping("post")
+    public Result detail(@RequestParam Long id) {
         PostVo vo = postService.selectOnePost(new QueryWrapper<MPost>().eq("p.id", id));
         //1分页信息 2用户id 3文章id 4排序
-        IPage<CommentVo> results = commentService.paging(gtePage(), null, vo.getId(), "created");
+        IPage<CommentVo> results = commentService.paging(getPage(), null, vo.getId(), "created");
         //增加阅读量
         postService.putViewCount(vo);
         Assert.notNull(vo, "文章已被删除");
-        req.setAttribute("post", vo);
-        req.setAttribute("CurrentCategoryId", vo.getCategoryId());
-        req.setAttribute("pageData", results);
 
-
-        return "post/detail";
+        return Result.success(Map.of(
+            "post", vo,
+            "CurrentCategoryId", vo.getCategoryId(),
+            "pageData", results
+        ));
     }
 
     
+    @ResponseBody
     @Operation(summary = "分类页面", description = "查看分类下的帖子")
-    @GetMapping("category/{id:\\d*}")
-    public String category(@PathVariable(name = "id") Long id) {
-        int pn = ServletRequestUtils.getIntParameter(req, "pn", 1);
+    @GetMapping("category")
+    public Result category(@RequestParam Long id) {
+        IPage<PostVo> pageData = postService.paging(getPage(), id, null, null, null, "created");
 
-
-        req.setAttribute("CurrentCategoryId", id);
-        req.setAttribute("pn", pn);
-        return "post/category";
+        return Result.success(Map.of(
+            "CurrentCategoryId", id,
+            "pageData", pageData
+        ));
     }
 
     
